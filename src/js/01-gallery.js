@@ -7,8 +7,6 @@ import { galleryItems } from './gallery-items';
 console.log(galleryItems);
 const gallery = document.querySelector('.gallery');
 
-let instance = null;
-
 const markup = galleryItems
   .map(
     item =>
@@ -28,22 +26,12 @@ const markup = galleryItems
 gallery.insertAdjacentHTML('beforeend', markup);
 console.log(gallery);
 
-gallery.addEventListener('click', event => {
-  event.preventDefault();
-
-  const handleEscape = event => {
-    if (event.key === 'Escape') instance.close();
-  };
-  instance = basicLightbox.create(
-    `<img src=${event.target.dataset.source} width="800" height="600">`,
-    {
-      onShow: () => {
-        document.addEventListener('keydown', handleEscape);
-      },
-      onClose: () => {
-        document.removeEventListener('keydown', handleEscape);
-      },
-    }
-  );
-  instance.show();
+new SimpleLightbox('.gallery a', {
+  animationSpeed: 500,
+  captionsData: 'data-alt',
+  captionDelay: 250,
+  download: 'If you want download this picture please click here...',
+  doubleTapZoom: 4,
+  maxZoom: 20,
+  scrollZoomFactor: 0.1,
 });
