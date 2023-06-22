@@ -27,11 +27,6 @@ gallery.insertAdjacentHTML('beforeend', markup);
 console.log(gallery);
 
 new SimpleLightbox('.gallery a', {
-  animationSpeed: 500,
   captionsData: 'data-alt',
-  captionDelay: 250,
-  download: 'If you want download this picture please click here...',
-  doubleTapZoom: 4,
-  maxZoom: 20,
-  scrollZoomFactor: 0.1,
+  scrollZoomFactor: 0.3,
 });
