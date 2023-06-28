@@ -29,4 +29,5 @@ console.log(gallery);
 new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   scrollZoomFactor: 0.3,
+  captionDelay: 250,
 });
