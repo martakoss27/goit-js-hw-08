@@ -27,6 +27,6 @@ gallery.insertAdjacentHTML('beforeend', markup);
 console.log(gallery);
 
 new SimpleLightbox('.gallery a', {
-  captionsData: 'data-alt',
+  captionsData: 'alt',
   scrollZoomFactor: 0.3,
 });
