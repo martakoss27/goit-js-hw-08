@@ -14,7 +14,7 @@ function clearStorage(event) {
   event.preventDefault();
   console.log({ email: email.value, message: message.value });
   form.reset();
-  localStorage.clear();
+  localStorage.removeItem(LOCALSTORAGE_KEY);
 }
 
 form.addEventListener('submit', clearStorage);
